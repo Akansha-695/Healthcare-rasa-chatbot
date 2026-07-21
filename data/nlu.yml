@@ -1,0 +1,313 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hi
+    - hello
+    - hey
+    - good morning
+    - good evening
+
+- intent: goodbye
+  examples: |
+    - bye
+    - goodbye
+    - see you
+    - exit
+
+- intent: count_patients
+  examples: |
+    - how many [male](gender) patients have [cancer](medical_condition)
+    - how many [female](gender) patients have [Diabetes](medical_condition)
+    - total number of [cancer](medical_condition) cases
+    - count [female](gender) patients with [Diabetes](medical_condition)
+    - how many patients have [Asthma](medical_condition)
+    - how many [male](gender) patients are there
+    - count patients with [Urgent](admission_type) admission
+    - how many [Emergency](admission_type) cases are there
+    - how many patients are on [Aspirin](medication)
+    - count patients with [Normal](test_result) test results
+    - how many patients have [Abnormal](test_result) results
+    - total [female](gender) patients
+    - how many [male](gender) have [Hypertension](medical_condition)
+    - count [Elective](admission_type) admissions
+    - how many patients take [Ibuprofen](medication)
+    - total [Inconclusive](test_result) test results
+    - how many [female](gender) patients have [Arthritis](medical_condition)
+    - count males with diabetes
+    - total urgent admissions
+    - how many abnormal results
+    - count males having [cancer](medical_condition) and [asthma](medical_condition)
+    - how many [male](gender) patients have [cancer](medical_condition) and [hypertension](medical_condition)
+    - how many males having [cancer](medical_condition) and [asthma](medical_condition)
+    - count [female](gender) with [diabetes](medical_condition) and [obesity](medical_condition)
+    - total males with [asthma](medical_condition) and [arthritis](medical_condition)
+    - how many patients have [cancer](medical_condition) and [diabetes](medical_condition)
+    - count patients with [A+](blood_type) blood type
+    - how many patients have [B-](blood_type) blood group
+    - count [male](gender) patients with [A-](blood_type) blood group
+    - how many [female](gender) have [O+](blood_type)
+    - total patients with [AB+](blood_type) blood type
+    - what about [male](gender)
+    - what about [female](gender)
+    - and [O-](blood_type)
+    - and [O-](blood_type) group
+    - what about [A+](blood_type)
+    - only [B+](blood_type)
+    - only [A+](blood_type)
+    - only [urgent](admission_type) admissions
+    - only [emergency](admission_type)
+    - what about [diabetes](medical_condition)
+    - and [diabetes](medical_condition)
+
+- intent: list_patients
+  examples: |
+    - list all patients with [cancer](medical_condition)
+    - show me all [female](gender) patients
+    - show patients with [Urgent](admission_type) admission
+    - list patients on [Aspirin](medication)
+    - show patients with [Normal](test_result) test results
+    - give me [male](gender) patients with [Diabetes](medical_condition)
+    - list all [Emergency](admission_type) patients
+    - show [female](gender) patients with [Abnormal](test_result) results
+    - list patients taking [Ibuprofen](medication)
+    - show all [Elective](admission_type) admissions
+    - are there any [female](gender) with [cancer](medical_condition)
+    - is there any [male](gender) with [Normal](test_result) results
+    - show women with cancer
+    - list men with diabetes
+    - give me urgent female patients
+    - show [male](gender) patients having [A-](blood_type) blood group
+    - show [male](gender) patients having [A+](blood_type) blood group
+    - show [male](gender) patients with [B+](blood_type) blood type
+    - list patients with [AB-](blood_type) blood group
+    - display [female](gender) patients having [O-](blood_type)
+    - show males having [A-](blood_type) blood group
+    - show females with [B+](blood_type) blood type
+    - list [male](gender) with [cancer](medical_condition) and [asthma](medical_condition)
+    - show patients with [diabetes](medical_condition) and [hypertension](medical_condition)
+    - display [female](gender) having [cancer](medical_condition) and [arthritis](medical_condition)
+    - show males having cancer and asthma
+    - list females with diabetes and obesity
+    - show me patients with [A+](blood_type)
+    - display all patients with [O+](blood_type) blood group
+    - show [male](gender) patients having [cancer](medical_condition)
+    - list patients above age 50
+    - show patients younger than 30
+    - display patients between 40 and 60
+    - show patients with billing above 20000
+    - list patients billed more than 15000
+    - list of all [female](gender) having A+ blood group
+    - list of all [femles](gender) having A+ blood group
+    - list of all [male](gender) having A+ blood group
+    - list of [female](gender) patients with A+ blood group
+    - list of all [females](gender) with B positive blood group
+    - what about [male](gender)
+    - what about [female](gender) patients
+    - and [O-](blood_type) group
+    - show [O-](blood_type) instead
+    - what about [A+](blood_type) group
+    - visualize patient data by blood group
+    - visualize patients by gender
+    - show chart of blood groups
+    - only [B+](blood_type)
+    - only [A+](blood_type)
+    - only [urgent](admission_type) admissions
+    - only [emergency](admission_type)
+    - what about [diabetes](medical_condition)
+    - and [diabetes](medical_condition)
+
+- intent: get_patient_info
+  examples: |
+    - what is the doctor of [John](patient_name)
+    - which hospital was [Alice](patient_name) admitted to
+    - what is the medication for [Bob](patient_name)
+    - show me details of [Mary](patient_name)
+    - what is the billing amount for [David](patient_name)
+    - which insurance does [Emma](patient_name) have
+    - what are the test results of [Sophia](patient_name)
+    - when was [Liam](patient_name) admitted
+    - what is the discharge date of [Olivia](patient_name)
+    - what room is [Noah](patient_name) in
+    - tell me about patient [James](patient_name)
+    - what condition does [Isabella](patient_name) have
+    - what is the age of [Ethan](patient_name)
+
+- intent: most_common_blood_type
+  examples: |
+    - what is most common blood group among [male](gender) patients
+    - most common blood type among [female](gender)
+    - which blood group is most common
+    - most frequent blood type overall
+    - which blood type do most patients have
+    - what is the most common blood type
+    - most common blood group overall
+
+- intent: compare_blood_types
+  examples: |
+    - are there more A+ patients with [cancer](medical_condition) than B-
+    - compare A+ and B- for [Diabetes](medical_condition)
+    - which has more patients A+ or B- with [cancer](medical_condition)
+    - more A+ or B- with [Asthma](medical_condition)
+
+- synonym: B+
+  examples: |
+    - b positive
+    - b positive blood group
+    - b positive blood type
+    - B positive
+    - B positive blood group
+    - B positive blood type
+    - b poistive blood group
+    - b poistive blood group.
+
+- synonym: A+
+  examples: |
+    - a positive
+    - a positive blood group
+    - A positive
+    - A positive blood group
+    - A positive blood type
+
+- synonym: O+
+  examples: |
+    - o positive
+    - o positive blood group
+    - o positive blood typ
+    - O positive
+    - O positive blood group
+    - O positive blood type
+
+- synonym: O-
+  examples: |
+    - o negative
+    - o negative blood group
+    - o negative blood typ
+    - O negative
+    - O negative blood group
+    - O negative blood type
+
+- synonym: AB+
+  examples: |
+    - ab positive
+    - AB positive
+    - AB positive blood group
+    - AB positive blood type
+
+
+- synonym: female
+  examples: |
+    - women
+    - womens
+    - woman
+    - womans
+    - ladies
+    - lady
+    - females
+    - female
+    - girls
+    - girl
+
+- synonym: male
+  examples: |
+    - men
+    - mens
+    - man
+    - mans
+    - gents
+    - gent
+    - males
+    - male
+    - boy
+    - boys
+    - mael
+
+- synonym: Diabetes
+  examples: |
+    - diabetic
+    - diabets
+    - diabetis
+    - diabetes
+    - diabets
+
+- synonym: Cancer
+  examples: |
+    - cancerous
+    - cancer
+
+- synonym: Urgent
+  examples: |
+    - urgent care
+    - urgently
+    - urgency
+
+- synonym: Emergency
+  examples: |
+    - emergency care
+    - emergencies
+
+- synonym: Elective
+  examples: |
+    - elective surgery
+    - planned
+
+- synonym: Normal
+  examples: |
+    - normal results
+    - negative
+
+- synonym: Abnormal
+  examples: |
+    - abnormal results
+    - positive
+
+- synonym: Inconclusive
+  examples: |
+    - inconclusive results
+    - unclear
+
+- intent: analytics_query
+  examples: |
+    - which hospital has most urgent admissions
+    - which hospital has the most urgent admissions
+    - which hospital has highest diabetes cases
+    - which hospital has most cancer patients
+    - who is the oldest patient
+    - who is the youngest patient
+    - show top 10 oldest patients
+    - show top 10 youngest patients
+    - show top 10 highest billing patients
+    - compare urgent and emergency admissions
+    - compare cancer and diabetes cases
+    - compare male and female cancer cases
+    - compare A+ and B+ blood groups
+    - compare medicare and aetna patients
+    - which doctor handles the most patients
+    - which doctor treats the most cancer patients
+    - what medication is most prescribed
+    - what is the most common disease
+    - what is the average age of cancer patients
+    - what is the average billing amount for diabetes patients
+    - which blood group has highest cancer cases
+    - which blood group has lowest diabetes cases
+    - who is the oldest patient
+    - who is the youngest patient
+    - show top 10 oldest patients
+    - show top 10 highest billing patients
+    - what is the average age of cancer patients
+    - average age of diabetes patients
+    - average billing for hypertension
+    - what is the most common disease
+    - what medication is most prescribed
+    - which doctor handles the most patients
+    - which hospital has most urgent admissions
+    - compare male and female cancer cases
+    - compare cancer and diabetes cases
+    - compare cancer vs diabetes
+    - which blood group has most cancer cases
+    - which blood type has highest diabetes cases
+    - top 10 oldest
+    - top 10 highest billing
+    - average age of all patients
+    - average billing overall

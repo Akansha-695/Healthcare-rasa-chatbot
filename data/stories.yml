@@ -1,0 +1,29 @@
+version: "3.1"
+
+stories:
+- story: count then followup
+  steps:
+    - intent: count_patients
+    - action: action_count_patients
+    - intent: count_patients
+    - action: action_count_patients
+
+- story: list patients
+  steps:
+    - intent: list_patients
+    - action: action_list_patients
+
+- story: get patient info
+  steps:
+    - intent: get_patient_info
+    - action: action_get_patient_info
+
+- story: most common blood type
+  steps:
+    - intent: most_common_blood_type
+    - action: action_most_common_blood_type
+
+- story: compare blood types
+  steps:
+    - intent: compare_blood_types
+    - action: action_compare_blood_types

@@ -1,0 +1,161 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - count_patients
+  - list_patients
+  - most_common_blood_type
+  - compare_blood_types
+  - get_patient_info
+  - analytics_query
+
+entities:
+  - gender
+  - blood_type
+  - medical_condition
+  - patient_name
+  - doctor_name
+  - hospital_name
+  - insurance_provider
+  - admission_type
+  - medication
+  - test_result
+  - age_value
+  - age_operator
+  - billing_operator
+  - billing_value
+  - room_number
+
+slots:
+  gender:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: gender
+
+  blood_type:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: blood_type
+
+  medical_condition:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: medical_condition
+
+  patient_name:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: patient_name
+
+  doctor_name:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: doctor_name
+
+  hospital_name:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: hospital_name
+
+  insurance_provider:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: insurance_provider
+
+  admission_type:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: admission_type
+
+  medication:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: medication
+
+  test_result:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: test_result
+
+  age_value:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: age_value
+
+  age_operator:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: age_operator
+
+  billing_value:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: billing_value
+
+  billing_operator:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: billing_operator
+
+  room_number:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: room_number
+
+  previous_filters:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: custom
+
+responses:
+  utter_greet:
+    - text: "Hello! I can answer questions about healthcare patients. Ask me anything."
+  utter_goodbye:
+    - text: "Goodbye!"
+
+actions:
+  - action_count_patients
+  - action_list_patients
+  - action_most_common_blood_type
+  - action_compare_blood_types
+  - action_compare_admissions
+  - action_get_patient_info
+  - action_keyword_fallback
+  - action_healthcare_analytics
+  - action_highest_cancer_bloodgroup
+  - action_chart_data
+  - action_least_common_blood_type
+  - action_most_common_disease
+  - action_compare_diseases
