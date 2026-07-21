@@ -122,7 +122,7 @@ Then open `http://localhost:8501` in your browser.
 
 ## Known Limitations
 
-- **No unfiltered total-count queries** — the bot requires at least one filter (gender, blood type, condition, etc.) before returning a count; a fully unfiltered "how many patients in total" is intentionally not supported.
+- **No unfiltered total-count queries** — the bot requires at least one filter (gender, blood type, condition, etc.) before returning a count.
 - **Patient name lookup relies on exact/near-exact matching** — free-form or misspelled names may not be recognized, since the pipeline has no pretrained language model for general name recognition.
 - **Entity extraction for compound values** (e.g. blood types like "A+") can occasionally misalign with tokenizer boundaries, which may affect edge-case queries.
 - **Short follow-up queries** work for common filter refinements (gender, blood type, condition) but are not guaranteed for every possible phrasing.
@@ -134,4 +134,4 @@ GitHub: [Akansha-695](https://github.com/Akansha-695)
 
 ## License
 
-This project was built as part of an academic/internship exercise.
+This project was built as part of an internship.
