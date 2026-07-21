@@ -129,7 +129,7 @@ Then open `http://localhost:8501` in your browser.
 
 ## Author
 
-**Akansha**
+**Akansha Kashyap**
 GitHub: [Akansha-695](https://github.com/Akansha-695)
 
 ## License
